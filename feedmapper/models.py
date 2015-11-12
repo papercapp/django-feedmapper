@@ -15,7 +15,7 @@ class Mapping(models.Model):
     data_map = JSONField(_("data map"))
     notification_recipients = models.TextField(_("notification recipients"), blank=True, help_text=_("Specify one email address per line to be notified of parsing errors."))
     parse_attempted = models.DateTimeField(_("parse attempted"), blank=True, null=True)
-    parse_succeeded = models.BooleanField(_("parse succeeded"))
+    parse_succeeded = models.BooleanField(_("parse succeeded"), default=False)
     parse_log = models.TextField(_("parse log"), blank=True)
 
     def __unicode__(self):
